@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: banco-xyz-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: banco_xyz
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - banco_xyz_data:/var/lib/postgresql/data
+
+volumes:
+  banco_xyz_data:

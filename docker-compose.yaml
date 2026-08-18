@@ -1,16 +1,17 @@
 services:
-  postgres:
-    image: postgres:17
-    container_name: banco-xyz-postgres
+  mysql:
+    image: mysql:8.4
+    container_name: banco-xyz-mysql
     restart: unless-stopped
     environment:
-      POSTGRES_DB: banco_xyz
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      MYSQL_DATABASE: banco_xyz
+      MYSQL_USER: banco_user
+      MYSQL_PASSWORD: banco_password
+      MYSQL_ROOT_PASSWORD: root_password
     ports:
-      - "5432:5432"
+      - "3307:3306"
     volumes:
-      - banco_xyz_data:/var/lib/postgresql/data
+      - banco_xyz_data:/var/lib/mysql
 
 volumes:
   banco_xyz_data:

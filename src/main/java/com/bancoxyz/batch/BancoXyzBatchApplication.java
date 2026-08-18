@@ -1,4 +1,4 @@
-package com.bancoxyz.banco_xyz_batch;
+package com.bancoxyz.batch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
